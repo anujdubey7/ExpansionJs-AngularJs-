@@ -1,0 +1,11 @@
+<div [ngStyle]="{ 'background-color': backgroundColor }" 
+     class="max-w-sm mx-auto mt-6 shadow-lg rounded-lg overflow-hidden">
+  <img class="w-full h-48 object-cover" [src]="image" alt="Profile Image">
+  <div class="p-4">
+    <h4 class="text-xl font-semibold text-gray-800">{{ name }}</h4>
+    <p class="mt-2 text-gray-600">{{ description }}</p>
+    <a [href]="profileLink" class="block mt-4 bg-blue-500 text-white text-center py-2 rounded hover:bg-blue-600">
+      See Profile
+    </a>
+  </div>
+</div>
