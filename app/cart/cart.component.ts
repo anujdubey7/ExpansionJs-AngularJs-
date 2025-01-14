@@ -9,7 +9,8 @@ import { filter, map } from 'rxjs/operators';
   styleUrls: ['./cart.component.css']
 })
 
-// {} [] *
+// Observables and RxJS
+
 export class CartComponent {
   cartData: any[] = [];  
   cartAdd = new Observable<any>;
