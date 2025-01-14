@@ -1,0 +1,26 @@
+<div class="flex flex-col space-y-4"> 
+    <div class="w-3/4 mx-auto bg-white shadow-md rounded-lg">
+        <div class="bg-blue-500 text-white px-4 py-2 rounded-t-lg flex justify-between items-center">
+            <span>Product List</span>
+            <button class="bg-green-500 text-white text-sm px-3 py-1 rounded hover:bg-green-600" (click)="openNewPanel()">
+                Add
+            </button>
+        </div>
+        <div class="p-4">
+            <app-card></app-card>
+        </div>
+    </div>
+<!-- *  -->
+    
+    <div class="w-3/4 mx-auto bg-white shadow-md rounded-lg" *ngIf="isAdded">
+        <div class="bg-blue-500 text-white px-4 py-2 rounded-t-lg flex justify-between items-center">
+            <span>New Items</span>
+            <button class="bg-green-500 text-white text-sm px-3 py-1 rounded hover:bg-green-600" (click)="closeNewPanel()">
+                Delete
+            </button>
+        </div>
+        <div class="p-4">
+           
+        </div>
+    </div>
+</div>

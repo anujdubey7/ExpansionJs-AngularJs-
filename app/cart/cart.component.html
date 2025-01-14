@@ -1,0 +1,61 @@
+<div class="p-5 flex justify-between">
+  <div class="mb-4 w-1/2">
+    <h2 class="text-lg font-bold">Values</h2>
+    <div *ngFor="let item of data1" class="bg-gray-100 text-xs p-2 mt-2 rounded-md">
+      {{ item }}
+    </div>
+    <button 
+      class="bg-blue-500 text-white text-sm px-4 py-2 rounded hover:bg-blue-600 transition mt-5"
+      (click)="fromObserv()">
+      from()
+    </button>
+  </div>
+
+  <div class="mb-4 w-1/2 ml-10">
+    <h2 class="text-lg font-bold">Values</h2>
+    <div *ngFor="let item of data2" class="bg-gray-100 text-xs p-2 mt-2 rounded-md">
+      {{ item }}
+    </div>
+    <button
+      class="bg-blue-500 text-white text-sm px-4 py-2 rounded hover:bg-blue-600 transition mt-5"
+      (click)="ofObserv()">
+      Of()
+    </button>
+  </div>
+
+  <div class="mb-4 w-1/2 ml-10">
+    <h2 class="text-lg font-bold">Values</h2>
+    <div *ngFor="let item of data3" class="bg-gray-100 text-xs p-2 mt-2 rounded-md">
+      {{ item }}
+    </div>
+    <button
+      class="bg-blue-500 text-white text-sm px-4 py-2 rounded hover:bg-blue-600 transition mt-5"
+      (click)="intervalObserv()">
+      Interval()
+    </button>
+  </div>
+  <div class="mb-4 w-1/2 ml-10">
+    <h2 class="text-lg font-bold">Values</h2>
+    <div *ngFor="let item of data4" class="bg-gray-100 text-xs p-2 mt-2 rounded-md">
+      {{ item }}
+    </div>
+    <button
+      class="bg-blue-500 text-white text-sm px-4 py-2 rounded hover:bg-blue-600 transition mt-5"
+      (click)="timerObserv()">
+      Timer()
+    </button>
+  </div>
+</div>
+<div >
+  <div class="mb-4 w-1/2 ml-10">
+    <h2 class="text-lg font-bold">Table of 2</h2>
+    <div *ngFor="let item of table" class="bg-gray-100 text-xs p-2 mt-2 rounded-md">
+      {{ item }}
+    </div>
+    <button
+      class="bg-blue-500 text-white text-sm px-4 py-2 rounded hover:bg-blue-600 transition mt-5"
+      (click)="tableOf()">
+      Print
+    </button>
+  </div>
+</div>
