@@ -4,6 +4,9 @@ import { ActivatedRouteSnapshot, CanDeactivate, GuardResult, MaybeAsync, RouterS
 @Injectable({
   providedIn: 'root'
 })
+
+//canDeactivate
+
 export class FormDeactivateClassGuard implements CanDeactivate<unknown> {
   canDeactivate(
     component: any,
@@ -11,7 +14,7 @@ export class FormDeactivateClassGuard implements CanDeactivate<unknown> {
     currentState: RouterStateSnapshot,
     nextState?: RouterStateSnapshot): MaybeAsync<GuardResult> {
       
-      if(component && component?.username && component?.username?.dirty){
+      if(component && component?.username){
         const msg = confirm("YOu have some unsaved data...are you sure to go back?");
         if(msg){
           return true;
