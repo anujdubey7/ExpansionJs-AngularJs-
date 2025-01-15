@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
   styleUrl: './login.component.css'
 })
 
-// {} [] *
+// fetching data using api and then checking the user details and navigating them to route path and storing them in localStroage and if user logout then details is removed from localStorage and navigating them to login page
 
 export class LoginComponent {
   userObj: {username: string, password: string} = {
