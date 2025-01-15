@@ -7,6 +7,11 @@ import { CardComponent } from './card/card.component';
 import { ProductListingComponent } from './product-listing/product-listing.component';
 import { CartComponent } from './cart/cart.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
+import { LoginComponent } from './login/login.component';
+import { LayoutComponent } from './layout/layout.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { FormComponent } from './form/form.component';
 
 @NgModule({
   declarations: [
@@ -14,11 +19,17 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
     CardComponent,
     ProductListingComponent,
     CartComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    LoginComponent,
+    LayoutComponent,
+    FormComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

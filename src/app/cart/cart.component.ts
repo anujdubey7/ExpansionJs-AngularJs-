@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Observable, of, from,interval, take, timer, concatMap} from 'rxjs';
-import { filter, map } from 'rxjs/operators';
+import { filter, map, mergeMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-cart',
@@ -9,8 +9,7 @@ import { filter, map } from 'rxjs/operators';
   styleUrls: ['./cart.component.css']
 })
 
-// Observables and RxJS
-
+// {} [] *
 export class CartComponent {
   cartData: any[] = [];  
   cartAdd = new Observable<any>;
@@ -60,4 +59,10 @@ export class CartComponent {
     const observ2 = of(1,2,3,4,5,6,7,8,9,10).pipe(map(i => i* 2));
     observ2.subscribe((i)=>this.table.push(i));
   }
+  table2: number[] = [];
+  filterObser(){
+    const observ3 = of(1,2,3,4).pipe(filter(value => value % 2 === 0));
+    observ3.subscribe((i)=>this.table2.push(i));
+  }
+  
 }
