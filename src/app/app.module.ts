@@ -12,6 +12,8 @@ import { LayoutComponent } from './layout/layout.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { FormComponent } from './form/form.component';
+import { ReactiveFormComponent } from './form-2/reactive-form/reactive-form.component';
+import { TemplateFormComponent } from './form-2/template-form/template-form.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { FormComponent } from './form/form.component';
     SearchBarComponent,
     LoginComponent,
     LayoutComponent,
-    FormComponent
+    FormComponent,
+    ReactiveFormComponent,
+    TemplateFormComponent
   ],
   imports: [
     BrowserModule,

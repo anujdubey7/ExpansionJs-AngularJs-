@@ -9,6 +9,8 @@ import { childGuardGuard } from './service/child-guard.guard';
 import { canMatchGuard } from './service/can-match.guard';
 import { FormComponent } from './form/form.component';
 import { FormDeactivateClassGuard } from './service/form-deactivate-class.guard';
+import { TemplateFormComponent } from './form-2/template-form/template-form.component';
+import { ReactiveFormComponent } from './form-2/reactive-form/reactive-form.component';
 
 
 
@@ -30,8 +32,8 @@ const routes: Routes = [
       {
         path: 'observables',
         component: CartComponent,
-        canActivate: [authGuard],
-        canActivateChild : [childGuardGuard]
+        //canActivate: [authGuard],
+        //canActivateChild : [childGuardGuard]
       },
       {
         path:'product',
@@ -41,7 +43,15 @@ const routes: Routes = [
       {
         path: 'form',
         component: FormComponent,
-        canDeactivate: [FormDeactivateClassGuard]
+       // canDeactivate: [FormDeactivateClassGuard]
+      },
+      {
+        path: 'template-form',
+        component: TemplateFormComponent
+      },
+      {
+        path: 'reactive-form',
+        component: ReactiveFormComponent
       }
     ]
   }  

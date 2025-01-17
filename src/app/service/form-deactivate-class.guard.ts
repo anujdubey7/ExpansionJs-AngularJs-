@@ -4,9 +4,6 @@ import { ActivatedRouteSnapshot, CanDeactivate, GuardResult, MaybeAsync, RouterS
 @Injectable({
   providedIn: 'root'
 })
-
-//canDeactivate
-
 export class FormDeactivateClassGuard implements CanDeactivate<unknown> {
   canDeactivate(
     component: any,

@@ -1,9 +1,6 @@
 import { inject } from '@angular/core';
 import { CanMatchFn, Router } from '@angular/router';
 
-//canMatch
-
-//
 export const canMatchGuard: CanMatchFn = (route, segments) => {
   const role = localStorage.getItem('Role');
   const router = inject(Router)
