@@ -1,61 +1,164 @@
-<form [formGroup]="studentForm" (ngSubmit)="onSubmit()" class="max-w-md mx-auto">
+<!-- {} [] * -->
+<form class="max-w-md mx-auto" [formGroup]="formData">
   <div class="grid md:grid-cols-2 md:gap-6">
     <div class="relative z-0 w-full mb-5 group">
       <input
         type="text"
-        formControlName="fName"
         id="floating_first_name"
         class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-        placeholder=""/>
+        placeholder="" formControlName="firstName"/>
       <label
         for="floating_first_name"
         class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
         >First name</label>
-      <span *ngIf="studentForm.get('fName')?.invalid && studentForm.get('fName')?.touched" class="text-red-500">First name is required</span>
+        @if(formData.get('firstName')?.touched && formData.get('firstName')?.errors?.['required']){
+          <span class="text-red-800">This is required</span>
+        }@else if(formData.get('firstName')?.errors?.['minlength']){
+          	<span class="text-red-600">MIn. 4 char is required  </span>
+        }
     </div>
     <div class="relative z-0 w-full mb-5 group">
       <input
         type="text"
-        formControlName="lName"
         id="floating_last_name"
-        class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=""/>
+        class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder="" formControlName = "lastName"/>
       <label
         for="floating_last_name"
         class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-        >Last name</label>
-      <span *ngIf="studentForm.get('lName')?.invalid && studentForm.get('lName')?.touched" class="text-red-500">Last name is required</span>
+        >Last name
+      </label>
+      @if(formData.get('lastName')?.touched && formData.get('lastName')?.errors?.['required']){
+        <span class="text-red-800">This is required</span>
+      }
+    </div>
+    
 
+  </div>
+  <div class="grid md:grid-cols-2 md:gap-6">
+    <div class="relative z-0 w-full mb-5 group">
+      <input
+        type="text"
+        id="floating_email"
+        class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder="" formControlName = "email"/>
+      <label
+        for="floating_email"
+        class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+        >Email
+      </label>
+      @if(formData.get('email')?.touched && formData.get('email')?.errors?.['required']){
+        <span class="text-red-800">This is required</span>
+      }@else if(formData.get('email')?.errors?.['pattern']){
+          <span class="text-red-600">Invalid Email</span>
+      }  
+    </div>
+    <div class="relative z-0 w-full mb-5 group">
+      <input
+        type="text"
+        id="floating_email"
+        class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder="" formControlName = "email"/>
+      <label
+        for="floating_email"
+        class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+        >COnfirm email Address
+      </label>
+      @if(formData.get('email')?.touched && formData.get('email')?.errors?.['required']){
+        <span class="text-red-800">This is required</span>
+      }@else if(formData.get('email')?.errors?.['pattern']){
+          <span class="text-red-600">Invalid Email</span>
+      }  
     </div>
   </div>
   <div class="grid md:grid-cols-2 md:gap-6">
     <div class="relative z-0 w-full mb-5 group">
       <input
         type="tel"
-        formControlName="phoneNo"
         id="floating_phone"
-        class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=""/>
+        class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder="" formControlName="phoneNo"/>
       <label
         for="floating_phone"
         class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
         >Phone number</label>
-        <span *ngIf="studentForm.get('phoneNo')?.invalid && studentForm.get('phoneNo')?.touched" class="text-red-500">Phone number is required</span>
+        @if(formData.get('phoneNo')?.touched && formData.get('phoneNo')?.errors?.['maxlength']){
+          <span class="text-red-800">Invalid Number</span>
+        }
     </div>
     <div class="relative z-0 w-full mb-5 group">
       <input
         type="text"
-        formControlName="college"
         id="floating_college"
         class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-        placeholder=""/>
+        placeholder="" formControlName = "college"/>
       <label
         for="floating_college"
         class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
         >College</label>
+        
+    </div>
+  </div>
+  <div class="grid md:grid-cols-2 md:gap-6" formGroupName="address">
+    <div class="relative z-0 w-full mb-5 group">
+      <input
+        type="text"
+        id="floating_city"
+        class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder="" formControlName="city"/>
+      <label
+        for="floating_city"
+        class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+        >City</label>
+        
+    </div>
+    <div class="relative z-0 w-full mb-5 group">
+      <select
+        id="floating_state"
+        class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" formControlName="state"> 
+        <option value="" disabled selected>Choose</option>
+        <option value="Uttar Pradesh">Uttar Pradesh</option>
+        <option value="Uttarakhand">Uttarakhand</option>
+        <option value="Jammu">Jammu</option>
+      </select>
+      <label
+        for="floating_state"
+        class="peer-focus:font-medium absolute text-sm text-gray-500 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:text-blue-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+        >State</label>
+        @if(formData.get('address.state')?.touched && formData.get('address.state')?.errors?.['required']){
+          <span class="text-red-800">This is required</span>
+        }
+    </div>
+    <div>
+      <div class="p-6 bg-gray-100 rounded-lg shadow-md">
+        <h3 class="text-lg font-semibold text-gray-800 mb-4">Skills</h3>
+        <button type="button" (click)="addSkill()"
+          class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-400">
+          Add Skill
+        </button>
+  
+        <div formArrayName="skills" class="mt-4 space-y-4">
+          <div *ngFor="let skill of skills.controls; let i = index" [formGroupName]="i"
+            class="flex items-center space-x-4">
+            <input [formControlName]="i" type="text" placeholder="Enter skill"
+              class="flex-1 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400" />
+  
+            <button type="button" (click)="removeSkill(i)"
+              class="px-3 py-2 text-sm bg-red-500 text-white rounded-md hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-400">
+              Delete
+            </button>
+  
+            <div *ngIf="skill.invalid && skill.touched" class="text-red-500 text-sm italic">
+              Skill is required.
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   <button
+    (click)="onSubmit()"
     type="submit"
-    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center" (click)="onSubmit()">
+    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">
     Submit
   </button>
+
+  <div class="m-9">
+    {{formValue | json}}
+  </div>
 </form>
