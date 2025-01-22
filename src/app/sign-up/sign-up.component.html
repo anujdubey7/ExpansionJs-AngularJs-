@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Form</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex justify-center items-center h-screen bg-gray-900 font-sans m-0 p-0">
+
+    <div class="bg-purple-700 rounded-lg p-8 w-196 shadow-lg">
+        <h1 class="text-white text-center text-2xl font-bold mb-5">Sign Up</h1>
+        <form class="flex flex-col">
+            <input 
+                type="text" 
+                class="mb-3 p-3 rounded-md bg-purple-200 border-none placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-purple-400" [(ngModel)]="registerUser.emailId"
+                placeholder="Email">
+            
+            <div class="flex gap-2">
+                
+                <input 
+                    type="text" 
+                    class="flex-1 p-3 rounded-md bg-purple-200 border-none placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-purple-400" [(ngModel)]="registerUser.password"
+                    placeholder="Password">
+            </div>
+            <input 
+                type="text" 
+                class="mb-3 p-3 rounded-md bg-purple-200 border-none placeholder-gray-600 focus:outline-none focus:ring-2 focus:ring-purple-400 mt-3" [(ngModel)]="registerUser.fullName"
+                placeholder="Full Name">
+            
+            
+            <button 
+                type="submit" 
+                class="mt-5 p-3 bg-gray-700 text-white rounded-lg border border-gray-800 hover:bg-green-800 cursor-pointer" (click)="onSignUp()">
+                Sign Up
+            </button>
+        </form>
+    </div>
+
+</body>
+</html>

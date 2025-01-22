@@ -1,5 +1,6 @@
-import { Component, inject } from '@angular/core';
+import { Component, Inject, inject } from '@angular/core';
 import { Router } from '@angular/router';
+import { RandomService } from '../service/random.service';
 
 @Component({
   selector: 'app-layout',
@@ -12,6 +13,10 @@ import { Router } from '@angular/router';
 // {} [] *
 
 export class LayoutComponent {
+
+  newRefresh= Inject(RandomService);
+
+  
 
   loggedUserData: any;
   constructor(){

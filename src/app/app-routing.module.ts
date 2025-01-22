@@ -11,6 +11,8 @@ import { FormComponent } from './form/form.component';
 import { FormDeactivateClassGuard } from './service/form-deactivate-class.guard';
 import { TemplateFormComponent } from './form-2/template-form/template-form.component';
 import { ReactiveFormComponent } from './form-2/reactive-form/reactive-form.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
+import { AnimationComponent } from './animation/animation.component';
 
 
 
@@ -24,6 +26,10 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent
+  },
+  {
+    path: 'signup',
+    component:SignUpComponent
   },
   {
     path: '',
@@ -52,6 +58,10 @@ const routes: Routes = [
       {
         path: 'reactive-form',
         component: ReactiveFormComponent
+      },
+      {
+        path: 'animation',
+        component: AnimationComponent
       }
     ]
   }  

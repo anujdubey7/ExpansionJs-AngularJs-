@@ -1,10 +1,17 @@
 <div class="flex items-center justify-center h-screen bg-gradient-to-r bg-slate-500 font-roboto">
     <div class="w-96 bg-white p-12 rounded-lg shadow-lg">
+      <mat-progress-bar *ngIf="isLoading" mode="buffer"></mat-progress-bar>
+
       <form class="space-y-4 login-form">
-        <input type="text" name="username" [(ngModel)] = "userObj.username" placeholder="Email address" class="w-full p-3 bg-gray-200 rounded focus:outline-none focus:ring-2 focus:ring-green-500" />
+        <input type="email" name="EmailId" [(ngModel)] = "userObj.EmailId" placeholder="Email Address" class="w-full p-3 bg-gray-200 rounded focus:outline-none focus:ring-2 focus:ring-green-500" />
         <input type="password" name="password" [(ngModel)] = "userObj.password" placeholder="password" class="w-full p-3 bg-gray-200 rounded focus:outline-none focus:ring-2 focus:ring-green-500" />
         <button type="button" (click)="onLogin()" class="w-full p-3 bg-cyan-500 text-white rounded hover:bg-green-700 transition">Login</button>
       </form>
+      <div class="mt-6">
+        <p class="text-center mb-3 text-red-500 ">Not a user?</p>
+        <button type="button" routerLink="/signup" class="w-full p-3 bg-cyan-500 text-white rounded hover:bg-green-700 transition">Sign Up</button>
+      </div> 
     </div>
+    
 </div>
-  
+ 

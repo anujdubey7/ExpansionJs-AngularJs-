@@ -1,0 +1,14 @@
+<div class="ml-96">
+  <div>
+    <button 
+      (click)="toggle()" 
+      class="mb-10 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700 transition">
+      Toggle
+    </button>
+  </div>
+  <div 
+    [@demo]="status" 
+    class="w-72 h-72 border-4 border-black flex items-center justify-center text-5xl text-white box">
+    {{ status === 'active' ? 'Active' : 'Inactive' }}
+  </div>
+</div>  

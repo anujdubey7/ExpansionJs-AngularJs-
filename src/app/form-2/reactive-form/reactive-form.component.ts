@@ -14,15 +14,15 @@ export class ReactiveFormComponent {
   formData: FormGroup;
   constructor(private fb: FormBuilder){
     	this.formData = this.fb.group({
-        firstName:['', [Validators.required, Validators.minLength(4)]],
-        lastName: ['', Validators.required],
-        phoneNo: ['', Validators.maxLength(10)],
-        email: ['', [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]], //this is email pattern  - 
+        firstName:[null, [Validators.required, Validators.minLength(4)]],
+        lastName: [null, Validators.required],
+        phoneNo: [null, Validators.maxLength(10)],
+        email: [null, [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]], //this is email pattern  - 
         // "^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$"
-        college: [''],
+        college: [null],
         address: this.fb.group({
-          city: [''],
-          state : ['', Validators.required]
+          city: [null],
+          state : [null, Validators.required]
       }),
         skills: this.fb.array([])
   })
@@ -33,11 +33,11 @@ get skills(): FormArray {
   return this.formData.get('skills') as FormArray;
 }
 
-addSkill(): void {
-  this.skills.push(this.fb.control('', Validators.required));
+addSkill(){
+  this.skills.push(this.fb.control(null, Validators.required));
 }
 
-removeSkill(index: number): void {
+removeSkill(index: number){
   this.skills.removeAt(index);
 }
 
