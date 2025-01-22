@@ -13,6 +13,8 @@ export class LoginComponent {
     EmailId: '',
     password: ''
   };
+
+  //condition for progressbar 
   isLoading = false;
   router = inject(Router);
 
